@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Scam Lab</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container dashboard-container">
+    <h1>Welcome, {{ session['user'] }}</h1>
+    <div class="buttons">
+        <a href="{{ url_for('payment') }}"><button>Send Fake Payment</button></a>
+        <a href="{{ url_for('winners') }}"><button>Winner List</button></a>
+        <a href="{{ url_for('logout') }}"><button>Logout</button></a>
+    </div>
+    <h2>Recent Transactions</h2>
+    <ul id="transactions">
+        {% for t in transactions %}
+        <li>{{ t }}</li>
+        {% endfor %}
+    </ul>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

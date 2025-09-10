@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Send Fake Payment</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Send Fake Payment</h1>
+    <form method="POST">
+        <input type="text" name="recipient" placeholder="Recipient Name" required>
+        <input type="number" name="amount" placeholder="Amount ($)" required>
+        <button type="submit">Send</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}"><button>Back to Dashboard</button></a>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
